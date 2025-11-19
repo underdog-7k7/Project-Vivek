@@ -14,6 +14,11 @@ interface Message {
   sources?: any[];
 }
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const xAPI = process.env.NEXT_AUTH_API_KEY;
+
+console.log("hellooo"+xAPI)
+
 export default function ChatPage() {
   const router = useRouter();
   const { idToken, logout, user } = useAuth();
@@ -54,10 +59,7 @@ export default function ChatPage() {
     setMessages((prev) => [...prev, { role: "bot", content: "Thinking..." }]);
     setIsLoading(true);
 
-    try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      const xAPI = process.env.NEXT_AUTH_API_KEY;
-      
+    try {  
       if(!xAPI){
         throw new Error("Missing x-api-key, unknown source!");
       }

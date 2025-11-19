@@ -23,11 +23,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
+  if(!googleClientId){
+    throw new Error("Missing google client id, unknown source!");
+  }
 
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
-        <GoogleOAuthProvider clientId={googleClientId || "223712136939-6lvgbf2mprhds635sl3c1f9fagb56u0h.apps.googleusercontent.com"}>
+        <GoogleOAuthProvider clientId={googleClientId}>
           <AuthProvider>
             {children}
             <Analytics />
