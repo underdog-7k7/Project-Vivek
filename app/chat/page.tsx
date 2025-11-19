@@ -15,9 +15,7 @@ interface Message {
 }
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-const xAPI = process.env.NEXT_AUTH_API_KEY;
-
-console.log("hellooo"+xAPI)
+const xAPI = process.env.NEXT_PUBLIC_AUTH_API_KEY;
 
 export default function ChatPage() {
   const router = useRouter();
