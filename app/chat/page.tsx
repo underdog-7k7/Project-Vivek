@@ -56,12 +56,18 @@ export default function ChatPage() {
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const xAPI = process.env.NEXT_AUTH_API_KEY;
+      
+      if(!xAPI){
+        throw new Error("Missing x-api-key, unknown source!");
+      }
 
       const response = await fetch(`${apiUrl}/ask`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${idToken}`,
           "Content-Type": "application/json",
+          "x-api-key": xAPI
         },
         body: JSON.stringify({ query: userMessage }),
       });
