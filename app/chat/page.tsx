@@ -62,8 +62,6 @@ export default function ChatPage() {
       const response = await fetch(`${apiUrl}/health`, {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${idToken}`,
-          "Content-Type": "application/json",
           "x-api-key": xAPI,
         },
       });
