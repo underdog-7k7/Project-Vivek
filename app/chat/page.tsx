@@ -55,20 +55,28 @@ export default function ChatPage() {
   const handleHealthCheck = async () => {
     setHealthStatus("checking");
     try {
+      if (!xAPI) {
+        throw new Error("Missing x-api-key, unknown source!");
+      }
+
       const response = await fetch(`${apiUrl}/health`, {
         method: "GET",
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+          "Content-Type": "application/json",
+          "x-api-key": xAPI,
+        },
       });
 
       if (response.ok) {
         setHealthStatus("healthy");
-        setTimeout(() => setHealthStatus(null), 3000);
       } else {
         setHealthStatus("unhealthy");
-        setTimeout(() => setHealthStatus(null), 3000);
       }
     } catch (err) {
       console.error("Health check error:", err);
       setHealthStatus("error");
+    } finally {
       setTimeout(() => setHealthStatus(null), 3000);
     }
   };
@@ -79,8 +87,8 @@ export default function ChatPage() {
     setMessages((prev) => [...prev, { role: "bot", content: "Thinking..." }]);
     setIsLoading(true);
 
-    try {  
-      if(!xAPI){
+    try {
+      if (!xAPI) {
         throw new Error("Missing x-api-key, unknown source!");
       }
 
@@ -89,7 +97,7 @@ export default function ChatPage() {
         headers: {
           Authorization: `Bearer ${idToken}`,
           "Content-Type": "application/json",
-          "x-api-key": xAPI
+          "x-api-key": xAPI,
         },
         body: JSON.stringify({ query: userMessage }),
       });
