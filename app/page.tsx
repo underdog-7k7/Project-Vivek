@@ -161,7 +161,7 @@ export default function LoginPage() {
                   </div>
                   <br />
                   <p className="text-m text-muted-foreground text-center mb-3">
-                    Animesh Pandey - November, 2025
+                    Animesh Pandey - December, 2025
                   </p>
                 </div>
               </div>
