@@ -15,7 +15,7 @@ interface Message {
 }
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-const xAPI = process.env.NEXT_PUBLIC_AUTH_API_KEY;
+// const xAPI = process.env.NEXT_PUBLIC_AUTH_API_KEY;
 
 export default function ChatPage() {
   const router = useRouter();
@@ -55,15 +55,15 @@ export default function ChatPage() {
   const handleHealthCheck = async () => {
     setHealthStatus("checking");
     try {
-      if (!xAPI) {
-        throw new Error("Missing x-api-key, unknown source!");
-      }
+      // if (!xAPI) {
+      //   throw new Error("Missing x-api-key, unknown source!");
+      // }
 
       const response = await fetch(`${apiUrl}/health`, {
         method: "GET",
-        headers: {
-          "x-api-key": xAPI,
-        },
+        // headers: {
+        //   "x-api-key": xAPI,
+        // },
       });
 
       if (response.ok) {
@@ -86,16 +86,16 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      if (!xAPI) {
-        throw new Error("Missing x-api-key, unknown source!");
-      }
+      // if (!xAPI) {
+      //   throw new Error("Missing x-api-key, unknown source!");
+      // }
 
       const response = await fetch(`${apiUrl}/ask`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${idToken}`,
           "Content-Type": "application/json",
-          "x-api-key": xAPI,
+          // "x-api-key": xAPI,
         },
         body: JSON.stringify({ query: userMessage }),
       });
