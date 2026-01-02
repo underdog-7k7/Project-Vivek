@@ -59,7 +59,7 @@ export default function ChatPage() {
       //   throw new Error("Missing x-api-key, unknown source!");
       // }
 
-      const response = await fetch(`${apiUrl}/health`, {
+      const response = await fetch(`${apiUrl}/`, {
         method: "GET",
         // headers: {
         //   "x-api-key": xAPI,
