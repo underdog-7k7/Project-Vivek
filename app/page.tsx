@@ -65,11 +65,12 @@ export default function LoginPage() {
                 {/* Flip Button - Top Right */}
                 <button
                   onClick={handleFlipCard}
-                  className="absolute top-4 right-4 p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-300 group z-10"
+                  className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary/20 backdrop-blur-sm border border-primary/20 text-primary font-medium transition-all duration-300 group z-10 shadow-sm"
                   aria-label="Learn about Garud Puran"
                 >
+                  <span className="text-sm">About the Project</span>
                   <svg
-                    className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500"
+                    className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -90,18 +91,19 @@ export default function LoginPage() {
                   </h1>
                   <p className="text-base text-muted-foreground leading-relaxed">
                     I have always been curious about life after death, exploring
-                    different perspectives about what happens after we go for our
-                    eternal sleep
+                    different perspectives about what happens after we go for
+                    our eternal sleep
                   </p>
                   <br />
                   <p className="text-base text-muted-foreground leading-relaxed">
-                    This project is an attempt to connect with one such perspective,
-                    a sacred text from my own religious heritage, the Garud Puraan.{" "}
+                    This project is an attempt to connect with one such
+                    perspective, a sacred text from my own religious heritage,
+                    the Garud Puraan.{" "}
                   </p>
                   <br />
                   <p className="text-base text-muted-foreground leading-relaxed">
-                    I hope you enjoy this venture, Would Love your feedback.. And
-                    let's connect!
+                    I hope you enjoy this venture, Would Love your feedback..
+                    And let's connect!
                   </p>
                 </div>
 
@@ -173,11 +175,12 @@ export default function LoginPage() {
                 {/* Flip Button - Top Right */}
                 <button
                   onClick={handleFlipCard}
-                  className="absolute top-4 right-4 p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-300 group z-10"
-                  aria-label="Return to login"
+                  className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary/20 backdrop-blur-sm border border-primary/20 text-primary font-medium transition-all duration-300 group z-10 shadow-sm"
+                  aria-label="Learn about Garud Puran"
                 >
+                  <span className="text-sm">Try it out</span>
                   <svg
-                    className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500"
+                    className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -223,17 +226,18 @@ export default function LoginPage() {
                   </h2>
                   <p className="text-muted-foreground leading-relaxed text-base">
                     Garud Puran is one of the eighteen Mahapuranas, a genre of
-                    ancient Indian texts, likely composed in the first millennium CE.
-                    It deals with various aspects of life, death, and afterlife,
-                    cosmology and others offering insights and spiritual guidance.
+                    ancient Indian texts, likely composed in the first
+                    millennium CE. It deals with various aspects of life, death,
+                    and afterlife, cosmology and others offering insights and
+                    spiritual guidance.
                   </p>
                   <br />
                   <p className="text-muted-foreground leading-relaxed text-base">
-                    It is said to have 19,000 shlokas. However, the manuscripts that
-                    have survived into the modern era have preserved about 8,000
-                    verses. The book which serves as the Knowledge source for this RAG
-                    is The book Garudapuranasaroddhara, translated by Ernest Wood and
-                    SV Subrahmanyam
+                    It is said to have 19,000 shlokas. However, the manuscripts
+                    that have survived into the modern era have preserved about
+                    8,000 verses. The book which serves as the Knowledge source
+                    for this RAG is The book Garudapuranasaroddhara, translated
+                    by Ernest Wood and SV Subrahmanyam
                   </p>
                 </div>
               </div>
